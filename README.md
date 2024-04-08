@@ -120,6 +120,10 @@ bash ./datasets/download_cyclegan_dataset.sh maps
 #!./scripts/train_cyclegan.sh
 python train.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan
 ```
+```bash
+#!./scripts/train_cyclegan.sh
+python train.py --dataroot ./datasets/rshaze --name rshaze_cyclegan --model cycle_gan
+```
 To see more intermediate results, check out `./checkpoints/maps_cyclegan/web/index.html`.
 - Test the model:
 ```bash
@@ -127,6 +131,12 @@ To see more intermediate results, check out `./checkpoints/maps_cyclegan/web/ind
 python test.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan
 ```
 - The test results will be saved to a html file here: `./results/maps_cyclegan/latest_test/index.html`.
+
+```bash
+#!./scripts/test_cyclegan.sh
+python test.py --dataroot ./datasets/rshaze --name rshaze_cyclegan --model cycle_gan
+```
+
 
 ### pix2pix train/test
 - Download a pix2pix dataset (e.g.[facades](http://cmp.felk.cvut.cz/~tylecr1/facade/)):

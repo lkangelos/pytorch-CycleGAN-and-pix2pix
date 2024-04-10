@@ -193,6 +193,12 @@ class BaseModel(ABC):
                 if hasattr(state_dict, '_metadata'):
                     del state_dict._metadata
 
+                # cvt_dict = OrderedDict()
+                # for k,v in state_dict.items():
+                #     key = k.replace('module.', '')
+                #     cvt_dict[key] = v
+                # net.load_state_dict(cvt_dict)
+
                 # patch InstanceNorm checkpoints prior to 0.4
                 for key in list(state_dict.keys()):  # need to copy keys here because we mutate in loop
                     self.__patch_instance_norm_state_dict(state_dict, net, key.split('.'))
